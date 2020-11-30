@@ -1,0 +1,18 @@
+.header-section {
+    height: 80vh;
+    background-size: cover;
+    background-image: url(../aditya-romansa-5zp0jym2w9M-unsplash.jpg);       
+}
+
+.header-section h1 {
+    color: white;
+}
+
+.overlay {
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.header-content {
+    padding-top: 15%;
+}
