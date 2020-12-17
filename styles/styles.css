@@ -1,18 +1,66 @@
+body {
+    background-color: rgba(121,28,106,1);
+}
+
+.bg-custom {
+    background-color: rgba(121,28,106,0.85);
+}
+
 .header-section {
     height: 80vh;
     background-size: cover;
     background-image: url(../images/aditya-romansa-5zp0jym2w9M-unsplash.jpg);       
 }
 
-.header-section h1 {
-    color: white;
-}
-
 .overlay {
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .header-content {
-    padding-top: 15%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+}
+
+.header-content h4 {
+    color: white;
+    text-align: center;
+}
+
+.header-content p {
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-section {
+    background-color: white;
+}
+ 
+.body-section {
+    background-color: #e3e2e2;
+    padding-top: 55px;
+    padding-bottom: 30px;
+}
+
+.bottom-section {
+    color: white;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.bottom-section a {
+    color: rgba(200,200,200);
+}
+
+.bottom-section a:hover {
+    color: rgba(255,255,255);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    margin-left: 110px;
 }
