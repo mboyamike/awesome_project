@@ -12,6 +12,8 @@
     
     if($conn->query($sql)) 
     {
+        $sql = "INSERT INTO patient ( Email) VALUES ('$email')";
+        $conn->query($sql);
         session_start();
         
         $_SESSION['first_name'] = $firstName;

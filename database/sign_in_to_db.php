@@ -23,7 +23,7 @@
 
                 if($row['User_Type'] == "doctor") 
                 {
-                    // Log in as doctor
+                    header("location: ../doctors/patients.php");
                 } 
                 else if($row['User_Type'] == "admin")
                 {
@@ -32,9 +32,10 @@
                 else 
                 {
                     // log in as patient
+                    header("location: ../patients/appointments.php");
                 }
 
-                header("location: ../patients/appointments.php");
+                
             }
         }
     } 
