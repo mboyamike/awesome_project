@@ -30,9 +30,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resources.php">Resources</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -44,7 +41,7 @@
                 <p>
                     View your pre natal care Appointments and Prescribed medication
                 </p>
-                <p>Are you a patient? <a href="#" class="btn btn-outline-light">Click Here</a></p>
+                <p>Are you a patient? <a href="patients.php" class="btn btn-outline-light">Click Here</a></p>
             </div>
         </div>
     </div>

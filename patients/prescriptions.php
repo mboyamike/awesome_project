@@ -1,13 +1,20 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['user_type'])) { header("location: ../sign_in.php"); } 
+    include("../database/constants.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome-free-5.15.1-web\css\all.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web\css\all.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Sign In</title>
+    <title>Prescriptions</title>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom">
@@ -20,46 +27,51 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="partners.php">Partners</a>
+                        <a class="nav-link" href="appointments.php">Appointments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="patients.php">Are you a patient?</a>
+                        <a class="nav-link active" href="prescriptions.php">Prescription</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About Us</a>
+                        <a class="nav-link" href="../about.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="resources.php">Resources</a>
+                        <a class="nav-link" href="../database/log_out.php">Log Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="body-section">
+    <div class="body-section" style="height: 85vh;">
         <div class="container">
-            <form action="database/sign_in_to_db.php" class="outline-form mx-auto" style="width: 400px;" method="POST">
-                <div class="form-group">
-                    <h1>Sign In</h1>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Sign In" class="btn btn-primary">
-                </div>
-
-                Don't have an account? <a href="sign_up.php">Sign Up</a>
-            </form>
+            <h2 class="text-center">Prescriptions</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Medicine</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Prescription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $email = $_SESSION['email'];
+                        $sql = "SELECT * FROM medication WHERE Email = '$email'";
+                        $result = $conn->query($sql);
+                        while($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['Medicine_Name']; ?></td>
+                        <td><?php echo $row['Medicine_Type']; ?></td>
+                        <td><?php echo $row['Description']; ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

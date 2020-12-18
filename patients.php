@@ -28,9 +28,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resources.php">Resources</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -44,33 +41,20 @@
                 <p class="m3">Sign up for consistent appointment and prescription update </p>
             </div>
             <div class="row">
-                <a href="" class="btn btn-outline-primary ml-auto mr-3">Sign In</a>
+                <a href="sign_in.php" class="btn btn-outline-primary ml-auto mr-3">Sign In</a>
                 <a href="sign_up.php" class="btn btn-primary mr-auto ml-3">Sign Up</a>
             </div>
         </div>
     </div>
     <div class="body-section">
         <div class="container">
-            <div class="row">
-                <a href="">
-                    <div class="col-6 m-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <p class="card-text">Monitor prenatal appointments</p>
-                            </div>
-                        </div>
+            <a href="sign_in.php">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">Monitor prenatal appointments</p>
                     </div>
-                </a>
-                <a href="">
-                    <div class="col-6 m-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <p class="card-text">See your medicine prescriptions</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
 

@@ -38,32 +38,32 @@
 
     <div class="body-section">
         <div class="container">
-            <form action="" class="outline-form mx-auto" style="width: 400px;">
+            <form action="database/sign_up_to_db.php" class="outline-form mx-auto" style="width: 400px;" method="POST">
                 <div class="form-group">
                     <h1>Sign Up</h1>
                 </div>
                 <div class="form-group mt-3">
                     <label for="first_name">First Name</label>
-                    <input class="form-control" type="text" name="first_name" id="first_name">
+                    <input class="form-control" type="text" name="first_name" id="first_name" required>
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
-                    <input type="text" name="last_name" id="last_name" class="form-control">
+                    <input type="text" name="last_name" id="last_name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
+                    <input type="password" name="password" id="password" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <input type="submit" value="Sign Up" class="btn btn-primary">
                 </div>
 
-                Already have an account? <a href="">Sign In</a>
+                Already have an account? <a href="sign_in.php">Sign In</a>
             </form>
         </div>
     </div>
